@@ -18,8 +18,8 @@ body {
   padding: 30px;
   background: #ffffff;
   border-radius: 12px;
+  border: 2px solid #000;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 2px solid #000000;
 }
 
 /* Header Layout */
@@ -60,7 +60,7 @@ body {
   flex: 1;
   min-width: 280px;
   max-width: 300px;
-  height: 500px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,27 +69,22 @@ body {
   border-radius: 12px;
   border: 2px solid #cfd9e9;
   overflow: hidden;
-  margin: auto;
 }
 .photo-slider {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: auto;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .photo-slider img {
-  position: absolute;
-  width: auto;
-  height: 100%;
+  display: none;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
   border-radius: 12px;
+  transition: opacity 1s ease-in-out;
 }
 .photo-slider img.active {
-  opacity: 1;
+  display: block;
 }
 
 /* Sections */
@@ -99,7 +94,6 @@ section {
   background: #f7faff;
   border-left: 5px solid #0d6efd;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.05);
 }
 h2 {
   font-size: 18px;
@@ -148,16 +142,11 @@ a:hover {
   background-color: #0b5ed7;
 }
 
-/* ✅ Responsive Design: Mobile & Tablet (info first, photo second) */
+/* ✅ Responsive Design */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
   .header-flex {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Show name/info first */
     align-items: center;
-    gap: 20px;
   }
 
   .header-left,
@@ -166,40 +155,25 @@ a:hover {
     max-width: 100%;
   }
 
-  .header-content {
-    text-align: center;
-  }
-
-  .header-content h1 {
-    font-size: 26px;
-    margin-bottom: 10px;
-  }
-
-  .header-content p {
-    font-size: 15px;
-    margin-bottom: 6px;
-  }
-
   .header-right {
-    height: 400px;
     margin-top: 10px;
   }
 
   .photo-slider {
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 
-  section {
-    padding: 15px;
+  .photo-slider img {
+    max-height: 400px;
   }
 
-  h2 {
-    font-size: 18px;
+  .header-content h1 {
+    font-size: 24px;
   }
 
-  ul li {
-    font-size: 14px;
+  .header-content p {
+    font-size: 15px;
   }
 
   .download-btn {
