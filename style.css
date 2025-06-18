@@ -5,29 +5,28 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   background: #e9f1fc;
   color: #2c3e50;
   line-height: 1.6;
 }
 
-/* Container */
+/* Container with black border */
 .container {
   max-width: 1150px;
-  margin: 40px auto;
-  padding: 40px;
+  margin: 20px auto;
+  padding: 30px;
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 2px solid black; /* 🟢 Black outer border */
+  border: 2px solid #000000;
 }
-
 
 /* Header Layout */
 .header-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -46,22 +45,22 @@ body {
   text-align: center;
 }
 .header-content h1 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 12px;
   color: #0d6efd;
 }
 .header-content p {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 8px;
   text-align: justify;
 }
 
-/* Right Side (Images) */
+/* Right Side (Image Slider) */
 .header-right {
   flex: 1;
   min-width: 280px;
   max-width: 300px;
-  height: 550px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +83,6 @@ body {
   position: absolute;
   width: auto;
   height: 100%;
-  max-height: 100%;
   object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -96,7 +94,7 @@ body {
 
 /* Sections */
 section {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   padding: 20px;
   background: #f7faff;
   border-left: 5px solid #0d6efd;
@@ -104,11 +102,11 @@ section {
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.05);
 }
 h2 {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
   color: #0d6efd;
   border-bottom: 2px solid #e0eafc;
-  padding-bottom: 3px;
+  padding-bottom: 4px;
 }
 ul {
   list-style: none;
@@ -116,7 +114,7 @@ ul {
 }
 ul li {
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 14px;
   text-align: justify;
 }
 
@@ -138,11 +136,11 @@ a:hover {
 }
 .download-btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: #0d6efd;
   color: white;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
   transition: background 0.3s;
 }
@@ -150,20 +148,63 @@ a:hover {
   background-color: #0b5ed7;
 }
 
-/* Responsive */
+/* ✅ Responsive Design: Mobile & Tablet (info first, photo second) */
 @media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
   .header-flex {
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
   }
+
+  .header-left,
   .header-right {
+    width: 100%;
     max-width: 100%;
+  }
+
+  .header-content {
+    text-align: center;
+  }
+
+  .header-content h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .header-content p {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .header-right {
     height: 400px;
+    margin-top: 10px;
   }
-  .container {
-    padding: 30px;
+
+  .photo-slider {
+    width: 90%;
+    height: 100%;
   }
+
   section {
     padding: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  ul li {
+    font-size: 14px;
+  }
+
+  .download-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
   }
 }
